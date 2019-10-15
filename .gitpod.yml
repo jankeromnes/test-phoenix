@@ -8,7 +8,7 @@ ports:
 # List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/44_config_start_tasks/
 tasks:
 # Install front-end assets
-- init: cd apps/mkfifo/assets && npm install && node node_modules/webpack/bin/webpack.js --mode development
+- init: cd assets && npm install && node node_modules/webpack/bin/webpack.js --mode development
 # Install dependencies
 - init: psql --command "CREATE USER postgres WITH SUPERUSER PASSWORD 'postgres';" && mix deps.get && mix ecto.create
   command: iex -S mix phx.server
